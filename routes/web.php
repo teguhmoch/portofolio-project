@@ -66,6 +66,21 @@ Route::group(['middleware' => ['auth.user','isUser']], function () {
         Route::get('destroy/{id}', 'SupplierController@destroy')->name('supplier.destroy')->middleware(['auth.master']);
      });
 
+     Route::prefix('customer')->group(function () { 
+
+        //get
+        Route::get('', 'CustomerController@index')->name('customer.index');
+        Route::get('edit/{id}', 'CustomerController@edit')->name('customer.edit')->middleware('auth.admin');
+        Route::get('show/{id}', 'CustomerController@show')->name('customer.show')->middleware('auth.admin');
+        Route::get('create', 'CustomerController@create')->name('customer.create')->middleware('auth.admin');
+
+        //post
+        Route::post('store', 'CustomerController@store')->name('customer.store');
+        Route::post('update/{id}', 'CustomerController@update')->name('customer.update');
+        Route::get('destroy/{id}', 'CustomerController@destroy')->name('customer.destroy')->middleware(['auth.master']);
+     });
+
+
                    //productIn
     Route::prefix('product-in')->group(function () { 
 
