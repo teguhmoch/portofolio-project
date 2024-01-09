@@ -4,7 +4,9 @@ Following Step :
 3. php artisan key:generate
 4. make new file .env 
 5. copy env.example content to file .env
-6. run migration and seeder , php artisan migrate --seed
+6. npm - i
+7. run migration and seeder , php artisan migrate --seed
+8. run server with php artisan serve and npm run watch
 
 env
 DB_DATABASE=db_product_management
