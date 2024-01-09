@@ -1,3 +1,11 @@
+Following Step :
+1. Clone Project
+2. composer - i
+3. php artisan key:generate
+4. make new file .env 
+5. copy env.example content to file .env
+6. run migration and seeder , php artisan migrate --seed
+
 env
 DB_DATABASE=db_product_management
 
